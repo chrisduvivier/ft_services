@@ -1,0 +1,4 @@
+started 1/27
+- set up kubernetes
+
+Each service within its own container -> each service has its own DockerFile
