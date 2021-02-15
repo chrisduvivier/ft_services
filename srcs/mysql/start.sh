@@ -10,7 +10,7 @@ mysql_install_db
 # start mysql
 mysqld -u root --datadir=/data & sleep 5
 
-# create some stuff in the mysql database
+# create wordpress related data in the mysql database
 mysql < mysql_setup.sql
 
 # keep a process running so the pod keeps running

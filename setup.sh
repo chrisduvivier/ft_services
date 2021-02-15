@@ -13,7 +13,7 @@ docker build ./srcs/phpmyadmin -t phpmyadmin_img
 
 # metallb LoadBalancer config
 minikube addons enable metallb
-kubectl apply -f ./metallb-config.yaml
+kubectl apply -f ./srcs/metallb/metallb-config.yaml
 
 # create a deployment and a service in minikube from the nginx image
 kubectl apply -f ./srcs/nginx/nginx-deployment.yaml
