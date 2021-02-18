@@ -3,6 +3,8 @@
 ## Minikube
 - How pods communicate (how each services will communicate): https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-networking-guide-beginners.html#:~:text=Communication%20between%20pods%20and%20services,-One%20last%20communication&text=In%20Kubernetes%2C%20a%20service%20lets,Kubernetes%20runs%20inside%20every%20node.
 
+- CrashBackLoop? Keep the pod alive: https://stackoverflow.com/questions/31870222/how-can-i-keep-a-container-running-on-kubernetes
+
 ## getting into YAML configuration file
 - starting from nginx.yaml and this documentation: https://kubernetes.io/docs/concepts/services-networking/service/#motivation
 
@@ -18,5 +20,7 @@
 - https://medium.com/faun/metallb-configuration-in-minikube-to-enable-kubernetes-service-of-type-loadbalancer-9559739787df
 
 ## MySQL
+- Used MariaDB
+- 
 
 ## PhPMyAdmin

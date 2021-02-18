@@ -1,4 +1,8 @@
-started 1/27
-- set up kubernetes
-
 Each service within its own container -> each service has its own DockerFile
+
+eval $(minikube -p minikube docker-env)
+# "The command minikube docker-env returns a set of Bash environment variable exports to configure your local environment to re-use the Docker daemon inside the Minikube instance."
+# https://stackoverflow.com/questions/52310599/what-does-minikube-docker-env-mean#:~:text=The%20command%20minikube%20docker%2Denv,and%20put%20them%20into%20effect.
+
+Setup TAML file for kubernetes:
+- https://www.bmc.com/blogs/kubernetes-port-targetport-nodeport/#:~:text=In%20Kubernetes%20there%20are%20several%20different%20port%20configurations%20for%20Kubernetes%20services%3A&text=Other%20pods%20within%20the%20cluster,pod%20will%20be%20listening%20on.

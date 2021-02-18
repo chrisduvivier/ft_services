@@ -15,6 +15,7 @@
  * cookie. Needs to be 32 chars long.
  */
 $cfg['blowfish_secret'] = 'OHMYGODHOWIHATETHISSTUPIDPROJECT'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['TempDir'] = '/tmp';
 
 /**
  * Servers configuration
@@ -28,7 +29,8 @@ $i++;
 // /* Authentication type */
 // $cfg['Servers'][$i]['auth_type'] = 'cookie';
 // /* Server parameters */
-// $cfg['Servers'][$i]['host'] = 'localhost';
+$cfg['Servers'][$i]['host'] = 'mysql-service';
+// $cfg['Servers'][$i]['port'] = "3306";
 // $cfg['Servers'][$i]['compress'] = false;
 // $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
@@ -37,10 +39,12 @@ $i++;
  */
 
 /* User used to manipulate with storage */
-$cfg['Servers'][$i]['controlhost'] = '';
+// $cfg['Servers'][$i]['controlhost'] = '';
 // $cfg['Servers'][$i]['controlport'] = '';
-$cfg['Servers'][$i]['controluser'] = 'root';
+$cfg['Servers'][$i]['controluser'] = 'user';    #correspond to the user/pass in mysql_setup.sql file.
 $cfg['Servers'][$i]['controlpass'] = 'pass';
+
+$cfg['PmaAbsoluteUri'] = './';          #for proxy_pass
 
 /* Storage database and tables */
 $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
