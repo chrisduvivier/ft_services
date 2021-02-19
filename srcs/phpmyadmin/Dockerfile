@@ -15,16 +15,15 @@ RUN apk update && apk add \
 RUN mkdir -p /usr/share/webapps/
 RUN mkdir -p /run/nginx
 
-# Download PhpMyAdmin
-RUN wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz \
-    && tar -xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz \
-    && mv phpMyAdmin-4.9.0.1-all-languages /usr/share/webapps/phpmyadmin \
-    && rm -rf /var/cache/apk/*
-
-
+COPY ./phpMyAdmin-5.0.4-all-languages.zip ./
 COPY ./config.inc.php /usr/share/webapps/phpmyadmin/config.inc.php
 COPY ./default.conf /etc/nginx/conf.d/
 COPY ./start.sh  ./
+
+# Unzip PhpMyAdmin
+RUN tar -xvf phpMyAdmin-5.0.4-all-languages.zip \
+    && mv phpMyAdmin-5.0.4-all-languages /usr/share/webapps/phpmyadmin \
+    && rm -rf /var/cache/apk/*
 
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -keyout /etc/ssl/private/nginx-selfsigned.key \
