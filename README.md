@@ -8,29 +8,30 @@
 - [ ] The Kubernetes web dashboard
 
 - [ ] The Load Balancer which manages the external access of your services.
-    - [ ] It has to be the only entry point to the cluster. 
+    - [x] It has to be the only entry point to the cluster. 
     - [ ] Keep the ports associated with the service (IP:3000 for Grafana etc). 
-    - [ ] Load Balancer will have a single ip.
+    - [x] Load Balancer will have a single ip.
 
 - [ ] WordPress website
-    - [ ] listening on port 5050
+    - [x] listening on port 5050
     - [ ] work with a MySQL database.
     - [ ] Both services have to run in separate containers.
     - [ ] The WordPress website will have several users and an administrator.
-    - [ ] Wordpress needs its own nginx server.
-    - [ ] The Load Balancer should be able to redirect directly to this service.
+    - [x] Wordpress needs its own nginx server.
+    - [x] The Load Balancer should be able to redirect directly to this service.
 
 - [ ] PhpMyAdmin
     - [x] listening on port 5000
     - [x] linked with the MySQL database.
     - [x] PhpMyAdmin needs its own nginx server. 
-    - [ ] The Load Balancer should be able to redirect directly to this service.
+    - [x] The Load Balancer should be able to redirect directly to this service.
+    - [ ] Issue: resolve deprecation notice
 
 - [ ] Nginx server
-    - [ ] listening on ports 80 and 443. Port 80 will be in http and should be a systematic redirection of type 301 to 443, which will be in https.
+    - [x] listening on ports 80 and 443. Port 80 will be in http and should be a systematic redirection of type 301 to 443, which will be in https.
     - [ ] The page displayed does not matter as long as it is not an http error.
     - [ ] This container will allow access to a /wordpress route that makes a redirect 307 to IP:WPPORT.
-    - [ ] It should also allow access to /phpmyadmin with a reverse proxy to IP:PMAPORT.
+    - [x] It should also allow access to /phpmyadmin with a reverse proxy to IP:PMAPORT.
 
 - [ ] FTPS server
     - [ ] listening on port 21
@@ -42,7 +43,8 @@
     - [ ] InfluxDB and grafana will be in two distincts containers.
 
 - [ ] Persistent Volume
-    - [ ] In case of a crash or stop of one of the two database containers, you will have to make shure the data persist.
+    - [x] data persist after stop of service/crash for MySQL.
+    - [ ] data persist after stop of service/crash for InfluxDB.
 
 - [ ] All your containers must restart in case of a crash or stop of one of its component parts.
 - [ ] Make sure that each redirection toward a service is done using a load balancer.
@@ -68,9 +70,10 @@
 
 ## METALLB
 - https://medium.com/faun/metallb-configuration-in-minikube-to-enable-kubernetes-service-of-type-loadbalancer-9559739787df
+- Single IP entry point to the cluster: https://metallb.universe.tf/usage/#ip-address-sharing
 
 ## MySQL
 - Used MariaDB
-- 
+- Create User: https://linuxize.com/post/how-to-create-mysql-user-accounts-and-grant-privileges/#:~:text=A%20user%20account%20in%20MySQL,user_password%20with%20the%20user%20password
 
 ## PhPMyAdmin

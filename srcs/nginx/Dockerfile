@@ -11,11 +11,12 @@ COPY default.conf /etc/nginx/conf.d/
 RUN mkdir -p /usr/share/nginx/html/
 
 COPY index.html /usr/share/nginx/html/
+COPY test.html /usr/share/nginx/html/
 
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -keyout /etc/ssl/private/nginx-selfsigned.key \
     -out /etc/ssl/certs/nginx-selfsigned.crt \
-    -subj "/C=BE/ST=Brussels/L=Brussels/O=42/OU=cduvivie/CN=localhost"
+    -subj "/C=BE/ST=Brussels/L=Brussels/O=42/OU=cduvivie/CN=ft_services"
 
 EXPOSE 80 443
 
