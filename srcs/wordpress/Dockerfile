@@ -26,7 +26,7 @@ RUN tar -xzvf wordpress-5.6.1.tar.gz && \
 #NGINX configuration file
 COPY ./default.conf /etc/nginx/conf.d/
 # Wordpress config file
-COPY /srcs/wp-config.php /user/share/webapps/wordpress
+COPY /srcs/wp-config.php /usr/share/webapps/wordpress
 #Script to launch nginx service (daemon) and php 
 COPY ./start.sh  ./
 

@@ -6,6 +6,7 @@ CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE ut
 GRANT ALL PRIVILEGES ON `phpmyadmin`.* TO 'user'@'%' IDENTIFIED BY 'pass';
 
 \. pma_ini.sql
--- \. wp-ini.sql
+
+\. wordpress_setup.sql
 
 exit

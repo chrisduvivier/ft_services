@@ -14,9 +14,9 @@
 
 - [ ] WordPress website
     - [x] listening on port 5050
-    - [ ] work with a MySQL database.
-    - [ ] Both services have to run in separate containers.
-    - [ ] The WordPress website will have several users and an administrator.
+    - [x] work with a MySQL database.
+    - [x] Both services have to run in separate containers.
+    - [x] The WordPress website will have several users and an administrator.
     - [x] Wordpress needs its own nginx server.
     - [x] The Load Balancer should be able to redirect directly to this service.
 
@@ -25,7 +25,7 @@
     - [x] linked with the MySQL database.
     - [x] PhpMyAdmin needs its own nginx server. 
     - [x] The Load Balancer should be able to redirect directly to this service.
-    - [ ] Issue: resolve deprecation notice
+    - [x] Issue: resolve deprecation notice -> updated pma to latest
 
 - [ ] Nginx server
     - [x] listening on ports 80 and 443. Port 80 will be in http and should be a systematic redirection of type 301 to 443, which will be in https.

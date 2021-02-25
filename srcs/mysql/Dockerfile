@@ -8,8 +8,7 @@ RUN apk update \
 
 COPY srcs/start.sh ./start.sh
 COPY srcs/my.cnf /etc/
-COPY srcs/pma_ini.sql ./
-COPY srcs/mysql_setup.sql ./
+COPY srcs/mysql_setup.sql srcs/wordpress_setup.sql srcs/pma_ini.sql ./ 
 
 # generate directory
 RUN mkdir -p /run/mysqld
