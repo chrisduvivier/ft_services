@@ -1,3 +1,5 @@
+#! /bin/sh
+
 # Installation
 
 # Setup Minikube
@@ -11,6 +13,7 @@ docker build ./srcs/nginx -t nginx_img
 docker build ./srcs/mysql -t mysql_img
 docker build ./srcs/phpmyadmin -t phpmyadmin_img
 docker build ./srcs/wordpress -t wordpress_img
+docker build ./srcs/ftps -t ftps_img
 
 # metallb LoadBalancer config
 minikube addons enable metallb
@@ -20,7 +23,7 @@ kubectl apply -f ./srcs/metallb/metallb-config.yaml
 kubectl apply -f ./srcs/nginx/nginx-deployment.yaml
 kubectl apply -f ./srcs/mysql/mysql-deployment.yaml
 kubectl apply -f ./srcs/phpmyadmin/phpmyadmin-deployment.yaml
-kubectl apply -f ./srcs/wordpress/wordpress-deployment.yaml
+kubectl apply -f ./srcs/ftps/ftps-deployment.yaml
 
 # have minikube expose the service locally
 # minikube service nginx-service
