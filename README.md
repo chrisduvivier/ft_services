@@ -40,7 +40,7 @@
     - [ ] listening on port 3000, linked with an InfluxDB database.
     - [ ] Grafana will be monitoring all your containers.
     - [ ] You must create one dashboard per service.
-    - [ ] InfluxDB and grafana will be in two distincts containers.
+    - [x] InfluxDB and grafana will be in two distincts containers.
 
 - [ ] Persistent Volume
     - [x] data persist after stop of service/crash for MySQL.
