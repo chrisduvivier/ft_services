@@ -4,6 +4,7 @@ RUN apk update \
 	&& apk add mariadb \
 	&& apk add mariadb-client \
 	&& apk add vim \
+	&& apk add telegraf \
 	&& rm -rf /var/cache/apk/*
 
 COPY srcs/start.sh ./start.sh
