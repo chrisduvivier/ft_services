@@ -7,6 +7,8 @@ RUN apk update && apk add \
 
 COPY /srcs/start.sh ./
 COPY /srcs/telegraf.conf ./
+COPY /srcs/provisioning/ /usr/share/grafana/conf/provisioning/
+COPY /srcs/dashboards/ /var/lib/grafana/dashboards/
 
 # Add permission
 RUN chmod +x start.sh
