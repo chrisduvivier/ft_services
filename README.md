@@ -35,7 +35,7 @@
 
 - [ ] FTPS server
     - [x] listening on port 21
-    - [ ] SSL (not specified in pdf?)
+    - [ ] SSL
 
 - [ ] A Grafana platform
     - [x] listening on port 3000, linked with an InfluxDB database.
@@ -45,7 +45,7 @@
 
 - [ ] Persistent Volume
     - [x] data persist after stop of service/crash for MySQL.
-    - [ ] data persist after stop of service/crash for InfluxDB.
+    - [x] data persist after stop of service/crash for InfluxDB.
 
 - [ ] All your containers must restart in case of a crash or stop of one of its component parts.
 - [x] Make sure that each redirection toward a service is done using a load balancer.
