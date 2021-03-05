@@ -3,10 +3,12 @@ FROM alpine:3.13.1
 RUN apk update && apk add \
     vsftpd \
     vim \
-    openssl
+    openssl \
+    telegraf
 
 COPY srcs/vsftpd.conf ./etc/vsftpd/
 COPY srcs/start.sh ./
+COPY srcs/telegraf.conf ./
 
 # Add permission
 RUN chmod +x start.sh

@@ -5,5 +5,4 @@ providers:
     folder: Services  # The folder where to place the dashboards
     type: file
     options:
-      # path to dashboard definitions (in my case, the one from the sample dashboard config)
-      path: /var/lib/grafana/dashboards
+      path: /var/lib/grafana/dashboards # path to dashboard definitions (in my case, the one from the sample dashboard config)

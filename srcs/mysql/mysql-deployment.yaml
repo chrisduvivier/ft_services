@@ -35,6 +35,13 @@ spec:
         volumeMounts:
           - name: mysql-persistent-storage
             mountPath: /data
+        livenessProbe:
+          exec:
+            command:
+            - pgrep
+            - telegraf
+          initialDelaySeconds: 30
+          periodSeconds: 5
       volumes:
         - name: mysql-persistent-storage
           persistentVolumeClaim:

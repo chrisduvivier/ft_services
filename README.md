@@ -7,12 +7,12 @@
 ## Services to implement
 - [ ] The Kubernetes web dashboard
 
-- [ ] The Load Balancer which manages the external access of your services.
+- [x] The Load Balancer which manages the external access of your services.
     - [x] It has to be the only entry point to the cluster. 
-    - [ ] Keep the ports associated with the service (IP:3000 for Grafana etc). 
+    - [x] Keep the ports associated with the service (IP:3000 for Grafana etc). 
     - [x] Load Balancer will have a single ip.
 
-- [ ] WordPress website
+- [x] WordPress website
     - [x] listening on port 5050
     - [x] work with a MySQL database.
     - [x] Both services have to run in separate containers.
@@ -20,24 +20,25 @@
     - [x] Wordpress needs its own nginx server.
     - [x] The Load Balancer should be able to redirect directly to this service.
 
-- [ ] PhpMyAdmin
+- [x] PhpMyAdmin
     - [x] listening on port 5000
     - [x] linked with the MySQL database.
     - [x] PhpMyAdmin needs its own nginx server. 
     - [x] The Load Balancer should be able to redirect directly to this service.
     - [x] Issue: resolve deprecation notice -> updated pma to latest
 
-- [ ] Nginx server
+- [x] Nginx server
     - [x] listening on ports 80 and 443. Port 80 will be in http and should be a systematic redirection of type 301 to 443, which will be in https.
-    - [ ] The page displayed does not matter as long as it is not an http error.
-    - [ ] This container will allow access to a /wordpress route that makes a redirect 307 to IP:WPPORT.
+    - [x] The page displayed does not matter as long as it is not an http error.
+    - [x] This container will allow access to a /wordpress route that makes a redirect 307 to IP:WPPORT.
     - [x] It should also allow access to /phpmyadmin with a reverse proxy to IP:PMAPORT.
 
 - [ ] FTPS server
-    - [ ] listening on port 21
+    - [x] listening on port 21
+    - [ ] SSL (not specified in pdf?)
 
 - [ ] A Grafana platform
-    - [ ] listening on port 3000, linked with an InfluxDB database.
+    - [x] listening on port 3000, linked with an InfluxDB database.
     - [ ] Grafana will be monitoring all your containers.
     - [ ] You must create one dashboard per service.
     - [x] InfluxDB and grafana will be in two distincts containers.
@@ -47,10 +48,10 @@
     - [ ] data persist after stop of service/crash for InfluxDB.
 
 - [ ] All your containers must restart in case of a crash or stop of one of its component parts.
-- [ ] Make sure that each redirection toward a service is done using a load balancer.
-- [ ] FTPS, Grafana, Wordpress, PhpMyAdmin and nginx’s kind must be "LoadBalancer".
-- [ ] Influxdb and MySQL’s kind must be "ClusterIP".
-- [ ] Other entries can be present, but none of them can be of kind "NodePort".
+- [x] Make sure that each redirection toward a service is done using a load balancer.
+- [x] FTPS, Grafana, Wordpress, PhpMyAdmin and nginx’s kind must be "LoadBalancer".
+- [x] Influxdb and MySQL’s kind must be "ClusterIP". (This is the default setting when not specified in yaml)
+- [x] Other entries can be present, but none of them can be of kind "NodePort".
 
 ## Minikube
 - How pods communicate (how each services will communicate): https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-networking-guide-beginners.html#:~:text=Communication%20between%20pods%20and%20services,-One%20last%20communication&text=In%20Kubernetes%2C%20a%20service%20lets,Kubernetes%20runs%20inside%20every%20node.

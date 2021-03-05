@@ -36,6 +36,12 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
+          livenessProbe:
+            exec:
+              command:
+              - ./livenessProbe.sh
+            initialDelaySeconds: 30
+            periodSeconds: 5
           # env:
           #   - name: PMA_HOST
           #     value: mysql-service

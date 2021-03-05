@@ -1,4 +1,4 @@
-FROM alpine:3.12.0
+FROM alpine:3.13.1
 
 RUN apk update && apk add \
     vim \
@@ -8,7 +8,7 @@ RUN apk update && apk add \
     php7-mbstring\ 
     php7-json \
     php7-session \
-    # telegraf \
+    telegraf \
     openssl \
     nginx
 
@@ -24,14 +24,18 @@ RUN tar -xzvf wordpress-5.6.1.tar.gz && \
     mv wordpress /usr/share/webapps/
 
 #NGINX configuration file
-COPY ./default.conf /etc/nginx/conf.d/
+COPY ./srcs/default.conf /etc/nginx/conf.d/
 # Wordpress config file
-COPY /srcs/wp-config.php /usr/share/webapps/wordpress
+COPY ./srcs/wp-config.php /usr/share/webapps/wordpress
 #Script to launch nginx service (daemon) and php 
-COPY ./start.sh  ./
+COPY ./srcs/start.sh  ./srcs/livenessProbe.sh ./
+# telegraf
+COPY ./srcs/telegraf.conf ./
+
 
 # Add permission
 RUN chmod +x start.sh
+RUN chmod +x livenessProbe.sh
 
 #Create SSL certificate
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \

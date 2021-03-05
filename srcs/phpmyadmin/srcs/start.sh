@@ -1,5 +1,7 @@
 #! /bin/sh
 
+telegraf --config telegraf.conf &
+
 # start php-fpm7 for processing php requests (in the background)
 php-fpm7  &
 

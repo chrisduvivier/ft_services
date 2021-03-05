@@ -22,9 +22,11 @@ RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-all-lang
     && mv phpmyadmin /usr/share/webapps/ \
     && rm -rf /var/cache/apk/*
 
-COPY ./config.inc.php /usr/share/webapps/phpmyadmin/config.inc.php
-COPY ./default.conf /etc/nginx/conf.d/
-COPY ./start.sh  ./
+COPY ./srcs/config.inc.php /usr/share/webapps/phpmyadmin/config.inc.php
+COPY ./srcs/default.conf /etc/nginx/conf.d/
+COPY ./srcs/start.sh  ./srcs/livenessProbe.sh ./
+# telegraf
+COPY ./srcs/telegraf.conf ./
 
 #Create SSL certificate
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
@@ -34,11 +36,8 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 
 # Add permission
 RUN chmod +x start.sh
-# RUN chmod +x /usr/share/webapps/phpmyadmin
+RUN chmod +x livenessProbe.sh
 
 EXPOSE 5000
-
-# CMD php -S 0.0.0.0:5000 -t /usr/share/webapps/phpmyadmin/
-# CMD nginx -g "daemon off;"
 
 CMD ["/start.sh"]
