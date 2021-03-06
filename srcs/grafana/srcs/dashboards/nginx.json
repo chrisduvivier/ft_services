@@ -18,7 +18,7 @@
     "links": [],
     "panels": [
       {
-        "datasource": "InfluxDB Metrics DB",
+        "datasource": "NGINX Metrics DB",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -108,7 +108,7 @@
         "type": "stat"
       },
       {
-        "datasource": "InfluxDB Metrics DB",
+        "datasource": "NGINX Metrics DB",
         "fieldConfig": {
           "defaults": {
             "custom": {
@@ -202,7 +202,7 @@
         "type": "stat"
       },
       {
-        "datasource": "InfluxDB Metrics DB",
+        "datasource": "NGINX Metrics DB",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -289,7 +289,7 @@
         "type": "gauge"
       },
       {
-        "datasource": "InfluxDB Metrics DB",
+        "datasource": "NGINX Metrics DB",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -376,7 +376,7 @@
         "type": "gauge"
       },
       {
-        "datasource": "InfluxDB Metrics DB",
+        "datasource": "NGINX Metrics DB",
         "fieldConfig": {
           "defaults": {
             "custom": {},
@@ -469,7 +469,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "InfluxDB Metrics DB",
+        "datasource": "NGINX Metrics DB",
         "fieldConfig": {
           "defaults": {
             "custom": {
@@ -616,7 +616,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "InfluxDB Metrics DB",
+        "datasource": "NGINX Metrics DB",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -784,7 +784,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "InfluxDB Metrics DB",
+        "datasource": "NGINX Metrics DB",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -951,7 +951,7 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "InfluxDB Metrics DB",
+        "datasource": "NGINX Metrics DB",
         "fieldConfig": {
           "defaults": {
             "custom": {}
@@ -1124,8 +1124,8 @@
     },
     "timepicker": {},
     "timezone": "",
-    "title": "Dashboard - InfluxDB Metrics DB",
-    "uid": "cduvivie-influx",
+    "title": "Dashboard - NGINX Metrics DB",
+    "uid": "cduvivie-nginx",
     "version": 1
   }
   

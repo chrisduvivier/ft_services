@@ -14,9 +14,9 @@ COPY srcs/telegraf.conf ./
 RUN chmod +x start.sh
 RUN chmod +x ./etc/vsftpd/
 
-# RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-#     -keyout /etc/vsftpd/vsftpd.key -out /etc/vsftpd/vsftpd.crt \
-#     -subj "/C=BE/ST=Brussels/L=Brussels/O=42/OU=cduvivie/CN=ft_services"
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+    -keyout /etc/vsftpd/vsftpd.key -out /etc/vsftpd/vsftpd.crt \
+    -subj "/C=BE/ST=Brussels/L=Brussels/O=42/OU=cduvivie/CN=ft_services"
 
 EXPOSE 21 30021
 

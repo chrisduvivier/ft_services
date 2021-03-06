@@ -1,11 +1,11 @@
 # ft_services
 
 ## General instructions
-- [ ] You must put all the necessary files for the configuration of your server in a folder called `srcs`.
-- [ ] Your `setup.sh` file should be at the root of your repository. This script will setup all your applications.
+- [x] You must put all the necessary files for the configuration of your server in a folder called `srcs`.
+- [x] Your `setup.sh` file should be at the root of your repository. This script will setup all your applications.
 
 ## Services to implement
-- [ ] The Kubernetes web dashboard
+- [x] The Kubernetes web dashboard
 
 - [x] The Load Balancer which manages the external access of your services.
     - [x] It has to be the only entry point to the cluster. 
@@ -33,14 +33,21 @@
     - [x] This container will allow access to a /wordpress route that makes a redirect 307 to IP:WPPORT.
     - [x] It should also allow access to /phpmyadmin with a reverse proxy to IP:PMAPORT.
 
-- [ ] FTPS server
+- [x] FTPS server
     - [x] listening on port 21
-    - [ ] SSL
+    - [x] FTP over TLS (FTPS: FTP but with more secure)
 
-- [ ] A Grafana platform
+- [x] A Grafana platform
     - [x] listening on port 3000, linked with an InfluxDB database.
-    - [ ] Grafana will be monitoring all your containers.
-    - [ ] You must create one dashboard per service.
+    - [x] Grafana will be monitoring all your containers.
+    - [x] You must create one dashboard per service.
+        - [x] ftps
+        - [x] grafana
+        - [x] influxdb
+        - [x] mysql
+        - [x] nginx
+        - [x] phpmyadmin
+        - [x] wordpress
     - [x] InfluxDB and grafana will be in two distincts containers.
 
 - [ ] Persistent Volume

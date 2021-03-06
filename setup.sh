@@ -30,5 +30,6 @@ kubectl apply -f ./srcs/ftps/ftps-deployment.yaml
 kubectl apply -f ./srcs/influxdb/influx-deployment.yaml
 kubectl apply -f ./srcs/grafana/grafana-deployment.yaml
 
-# have minikube expose the service locally
-# minikube service nginx-service
+# open minikuke dashboard
+printf "Opening minikube Dashboard\n"
+minikube dashboard
