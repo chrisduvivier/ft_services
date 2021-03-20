@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: influx-deployment
+  name: influx
   labels:
     app: influx
 spec:

@@ -22,13 +22,13 @@ minikube addons enable metallb
 kubectl apply -f ./srcs/metallb/metallb-config.yaml
 
 # create a deployment and a service in minikube from the nginx image
-kubectl apply -f ./srcs/nginx/nginx-deployment.yaml
-kubectl apply -f ./srcs/mysql/mysql-deployment.yaml
-kubectl apply -f ./srcs/phpmyadmin/phpmyadmin-deployment.yaml
-kubectl apply -f ./srcs/wordpress/wordpress-deployment.yaml
-kubectl apply -f ./srcs/ftps/ftps-deployment.yaml
-kubectl apply -f ./srcs/influxdb/influx-deployment.yaml
-kubectl apply -f ./srcs/grafana/grafana-deployment.yaml
+kubectl apply -f ./srcs/nginx/nginx.yaml
+kubectl apply -f ./srcs/mysql/mysql.yaml
+kubectl apply -f ./srcs/phpmyadmin/phpmyadmin.yaml
+kubectl apply -f ./srcs/wordpress/wordpress.yaml
+kubectl apply -f ./srcs/ftps/ftps.yaml
+kubectl apply -f ./srcs/influxdb/influx.yaml
+kubectl apply -f ./srcs/grafana/grafana.yaml
 
 # open minikuke dashboard
 printf "Opening minikube Dashboard\n"
