@@ -39,7 +39,7 @@ spec:
           exec:
             command:
             - pgrep
-            - telegraf
+            - mysqld
           initialDelaySeconds: 30
           periodSeconds: 5
       volumes:

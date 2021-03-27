@@ -14,7 +14,7 @@ Cleanup Space:
 - `docker system prune`
 
 EXEC POD to access:
-- `kubectl exec -it pod/nginx-deployment-57947cc9db-tskw7  -- /bin/sh`
+- `kubectl exec -it pod/nginx-57947cc9db-tskw7  -- /bin/sh`
 
 Docker notes:
 - https://phase2.github.io/devtools/common-tasks/ssh-into-a-container/

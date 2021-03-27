@@ -5,7 +5,7 @@ apiVersion: 1
 datasources:
   - name: InfluxDB Metrics DB
     type: influxdb
-    url: http://influx-service:8086
+    url: http://influxdb-service:8086
     database: influx_metrics_db
     user: user
     secureJsonData:
@@ -13,7 +13,7 @@ datasources:
 
   - name: NGINX Metrics DB
     type: influxdb
-    url: http://influx-service:8086
+    url: http://influxdb-service:8086
     database: nginx_metrics_db
     user: user
     secureJsonData:
@@ -21,7 +21,7 @@ datasources:
 
   - name: phpMyAdmin Metrics DB
     type: influxdb
-    url: http://influx-service:8086
+    url: http://influxdb-service:8086
     database: phpmyadmin_metrics_db
     user: user
     secureJsonData:
@@ -29,7 +29,7 @@ datasources:
 
   - name: WordPress Metrics DB
     type: influxdb
-    url: http://influx-service:8086
+    url: http://influxdb-service:8086
     database: wordpress_metrics_db
     user: user
     secureJsonData:
@@ -37,7 +37,7 @@ datasources:
 
   - name: MySQL Metrics DB
     type: influxdb
-    url: http://influx-service:8086
+    url: http://influxdb-service:8086
     database: mysql_metrics_db
     user: user
     secureJsonData:
@@ -45,7 +45,7 @@ datasources:
 
   - name: FTPS Metrics DB
     type: influxdb
-    url: http://influx-service:8086
+    url: http://influxdb-service:8086
     database: ftps_metrics_db
     user: user
     secureJsonData:
@@ -53,7 +53,7 @@ datasources:
       
   - name: Grafana Metrics DB
     type: influxdb
-    url: http://influx-service:8086
+    url: http://influxdb-service:8086
     database: grafana_metrics_db
     user: user
     secureJsonData:

@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: influx
+  name: influxdb
   labels:
-    app: influx
+    app: influxdb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: influx
+      app: influxdb
   template:
     metadata:
       labels:
-        app: influx
+        app: influxdb
     spec:
       containers:
-      - name: influx
-        image: influx_img
+      - name: influxdb
+        image: influxdb_img
         imagePullPolicy: Never
         ports:
         - containerPort: 8086
         volumeMounts:
-        - name: influx-persistent-storage
+        - name: influxdb-persistent-storage
           mountPath: /root/.influxdb
         livenessProbe:
           exec:
@@ -31,17 +31,17 @@ spec:
           initialDelaySeconds: 30
           periodSeconds: 5
       volumes:
-        - name: influx-persistent-storage
+        - name: influxdb-persistent-storage
           persistentVolumeClaim:
-            claimName: influx-pv-claim
+            claimName: influxdb-pv-claim
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: influx-service
+  name: influxdb-service
 spec:
   selector:
-    app: influx
+    app: influxdb
   ports:
     - protocol: TCP
       port: 8086
@@ -50,7 +50,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: influx-pv-claim
+  name: influxdb-pv-claim
 spec:
   accessModes:
     - ReadWriteOnce

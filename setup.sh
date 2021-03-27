@@ -4,7 +4,8 @@
 
 # Setup Minikube
 # minikube start
-minikube start --vm-driver=docker
+# minikube start --vm-driver=docker
+minikube start --memory=1987mb --vm-driver=docker
 
 eval $(minikube -p minikube docker-env)
 
@@ -14,7 +15,7 @@ docker build ./srcs/mysql -t mysql_img
 docker build ./srcs/phpmyadmin -t phpmyadmin_img
 docker build ./srcs/wordpress -t wordpress_img
 docker build ./srcs/ftps -t ftps_img
-docker build ./srcs/influxdb -t influx_img
+docker build ./srcs/influxdb -t influxdb_img
 docker build ./srcs/grafana -t grafana_img
 
 # metallb LoadBalancer config
@@ -27,7 +28,7 @@ kubectl apply -f ./srcs/mysql/mysql.yaml
 kubectl apply -f ./srcs/phpmyadmin/phpmyadmin.yaml
 kubectl apply -f ./srcs/wordpress/wordpress.yaml
 kubectl apply -f ./srcs/ftps/ftps.yaml
-kubectl apply -f ./srcs/influxdb/influx.yaml
+kubectl apply -f ./srcs/influxdb/influxdb.yaml
 kubectl apply -f ./srcs/grafana/grafana.yaml
 
 # open minikuke dashboard
